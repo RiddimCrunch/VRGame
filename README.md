@@ -74,7 +74,8 @@ Finalement, une fois ces deux étapes de faite, il ne reste plus qu'à créer no
 
 ![Alt Text](VrPlayer.JPG)
 
-La génération procédurale :
+## Génération procédurale :
+
 Le premier script est une classe appelée "Chunk" qui étend la classe Node3D. Il crée des morceaux de terrain en utilisant un bruit généré par la variable "noise". Le terrain est généré sous forme de maillage en utilisant un objet PlaneMesh. Les sommets du maillage sont modifiés en fonction du bruit généré, ce qui crée des variations de hauteur. Le maillage est ensuite utilisé pour créer une instance de MeshInstance3D, qui est ajoutée comme enfant de la scène. De plus, le script génère également de l'eau en utilisant un autre objet PlaneMesh et l'ajoute également comme enfant de la scène.
 
 ![Alt Text](ChunkScript.JPG)
@@ -89,6 +90,10 @@ Le deuxième script étend la classe Node3D et gère la génération dynamique d
 <br>
 
 <div>
+
+# Résultats
+
+Lors du développement, j'ai obtenu une carte qui se génère automatiquement avec du bruit, et j'ai pu tester l'utilisation de la réalité virtuelle pour mon joueur. Je ne m'attendais pas à faire une carte avec la génération procédurale et je suis stupéfait par le résultat de celle-ci. L'effort que j'ai mis dans ce projet est celui qui était attendu selon moi, car j'ai passé beaucoup d'heures à essayer de comprendre comment fonctionne la génération procédurale pour ensuite l'implémenter.
 
 # Conclusion
 
