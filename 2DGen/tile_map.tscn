@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c230bof25gixw"]
+
+[ext_resource type="Texture2D" uid="uid://0maymwbppsfn" path="res://2DGen/white.png" id="1_4g6cx"]
+[ext_resource type="Script" path="res://2DGen/TileMap.gd" id="2_qdkhx"]
+[ext_resource type="PackedScene" uid="uid://drr2shoedx2gq" path="res://2DGen/character_body_2d.tscn" id="3_gu6jy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fevx"]
+texture = ExtResource("1_4g6cx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_32iv7"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_8fevx")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_32iv7")
+format = 2
+script = ExtResource("2_qdkhx")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_gu6jy")]

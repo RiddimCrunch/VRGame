@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://3f6kysbmk4ry"]
+
+[ext_resource type="Script" path="res://vr_player.gd" id="1_3380d"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="2_yyrpf"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_33qae"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_vgrd2"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_w1fp4"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_dqvjq"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="8_uo04x"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="9_dqnrk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0bmix"]
+
+[node name="VrPlayer" type="CharacterBody3D"]
+script = ExtResource("1_3380d")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/XRControllerLeft" instance=ExtResource("2_yyrpf")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/XRControllerLeft" instance=ExtResource("3_33qae")]
+
+[node name="MovementDirect" parent="XROrigin3D/XRControllerLeft" instance=ExtResource("5_w1fp4")]
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="MovementTurn" parent="XROrigin3D/XRControllerRight" instance=ExtResource("6_dqvjq")]
+
+[node name="MovementJump" parent="XROrigin3D/XRControllerRight" instance=ExtResource("8_uo04x")]
+
+[node name="RightHand" parent="XROrigin3D/XRControllerRight" instance=ExtResource("9_dqnrk")]
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("4_vgrd2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0bmix")

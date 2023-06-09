@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvy3gs5xv8f1a"]
+
+[ext_resource type="Script" path="res://3DGen/World.gd" id="1_ixfva"]
+[ext_resource type="PackedScene" uid="uid://cxwogv3e031f3" path="res://3DGen/player.tscn" id="3_0gfp6"]
+[ext_resource type="Texture2D" uid="uid://dhrq8x7o3mu66" path="res://3DGen/sky_blue_sky.jpg" id="3_fy1f2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o2e7p"]
+panorama = ExtResource("3_fy1f2")
+
+[sub_resource type="Sky" id="Sky_soi4y"]
+sky_material = SubResource("PanoramaSkyMaterial_o2e7p")
+
+[sub_resource type="Environment" id="Environment_5p1t4"]
+background_mode = 2
+background_color = Color(0.0392157, 1, 1, 1)
+sky = SubResource("Sky_soi4y")
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_ixfva")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5p1t4")
+
+[node name="Player" parent="." instance=ExtResource("3_0gfp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 910.154, 283.375, -290.273)

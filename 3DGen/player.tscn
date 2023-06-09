@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxwogv3e031f3"]
+
+[ext_resource type="Script" path="res://3DGen/player.gd" id="1_p48m2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v4ylq"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_p48m2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v4ylq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UnderWater" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 0.356863)
