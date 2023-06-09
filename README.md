@@ -31,6 +31,9 @@
 - [Introduction](#introduction)
 - [Explication Projet](#explication-projet)
 - [Explication Fonctionnalité](#explication-fonctionnalité)
+  - [Réalité Virtuel :](#réalité-virtuel-)
+  - [Génération procédurale :](#génération-procédurale-)
+- [Résultats](#résultats)
 - [Conclusion](#conclusion)
 - [Référence / Médiagraphie](#référence--médiagraphie)
 
@@ -83,7 +86,6 @@ Le premier script est une classe appelée "Chunk" qui étend la classe Node3D. I
 
 Le deuxième script étend la classe Node3D et gère la génération dynamique de morceaux de terrain (chunks). Il utilise un bruit généré par l'objet FastNoiseLite pour générer les variations de terrain. Les chunks sont créés en fonction de la position du joueur et sont ajoutés à la scène lorsque nécessaire. Les chunks qui ne sont plus nécessaires sont supprimés pour optimiser les performances. Le script maintient une liste des chunks générés et utilise des dictionnaires pour gérer leur ajout, suppression et réinitialisation.
 
-
 ![Alt Text](WorldChunk.JPG)
 ![Alt Text](WorldProcess.JPG)
 
@@ -107,7 +109,7 @@ En conclusion, la génération procédurale et la réalité virtuelle offrent un
 
 # Référence / Médiagraphie
 
-[Godot](https://en.wikipedia.org/wiki/Godot_(game_engine)#Godot_4)
+[Godot](<https://en.wikipedia.org/wiki/Godot_(game_engine)#Godot_4>)
 
 [Godot documentation](https://docs.godotengine.org/en/stable/)
 
